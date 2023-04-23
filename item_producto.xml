@@ -1,0 +1,38 @@
+<!-- Código generado por Bing. Puede contener errores o estar incompleto. -->
+
+<!-- Crear un layout de tipo RelativeLayout -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Crear un TextView para mostrar el nombre del producto -->
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="16dp"
+        android:text="Nombre del producto"
+        android:textSize="18sp" />
+
+    <!-- Crear un TextView para mostrar el precio del producto -->
+    <TextView
+        android:id="@+id/tvPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/cbComprado"
+        android:layout_centerVertical="true"
+        android:layout_margin="16dp"
+        android:text="$0.00"
+        android:textSize="18sp" />
+
+    <!-- Crear un CheckBox para marcar si el producto está comprado o no -->
+    <CheckBox
+        android:id="@+id/cbComprado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="16dp" />
+</RelativeLayout>
