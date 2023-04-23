@@ -1,0 +1,83 @@
+<!-- Código generado por Bing. Puede contener errores o estar incompleto. -->
+
+<!-- Crear un layout de tipo LinearLayout con orientación vertical -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Crear un TextView para mostrar el presupuesto -->
+    <TextView
+        android:id="@+id/tvPresupuesto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Presupuesto: $100.00"
+        android:textSize="24sp" />
+
+    <!-- Crear un TextView para mostrar el progreso del presupuesto -->
+    <TextView
+        android:id="@+id/tvProgreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0.00%"
+        android:textSize="18sp" />
+
+    <!-- Crear un LinearLayout con orientación horizontal para contener los campos de texto y el botón agregar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Crear un EditText para introducir el nombre del producto -->
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:hint="Nombre del producto" />
+
+        <!-- Crear un EditText para introducir el precio del producto -->
+        <EditText
+            android:id="@+id/etPrecio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:hint="Precio del producto"
+            android:inputType="numberDecimal" />
+
+        <!-- Crear un Button para agregar el producto a la lista -->
+        <Button
+            android:id="@+id/btnAgregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Agregar" />
+    </LinearLayout>
+
+    <!-- Crear un ListView para mostrar los productos de la lista -->
+    <ListView
+        android:id="@+id/lvProductos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Crear un TextView para mostrar el total de la compra -->
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp" />
+    <!-- Crear un Button para compartir la lista de compras -->
+    <Button
+        android:id="@+id/btnCompartir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="16dp"
+        android:text="Compartir" />
+</LinearLayout>
