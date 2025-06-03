@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>CompraFácil Web</title>
+    <style>
+        body {font-family: Arial, sans-serif; margin: 2em;}
+        table {width: 100%; border-collapse: collapse; margin-top: 1em;}
+        th, td {padding: 0.5em; border-bottom: 1px solid #ccc; text-align: left;}
+        form.inline {display: inline;}
+    </style>
+</head>
+<body>
+<h1>CompraFácil</h1>
+<p>Presupuesto: ${{ presupuesto }} - Progreso: {{ '%.2f' % porcentaje }}%</p>
+<form action="{{ url_for('add') }}" method="post">
+    <input type="text" name="nombre" placeholder="Nombre del producto" required>
+    <input type="number" step="0.01" name="precio" placeholder="Precio" required>
+    <button type="submit">Agregar</button>
+</form>
+<table>
+    <thead>
+        <tr><th>Producto</th><th>Precio</th><th>Comprado</th></tr>
+    </thead>
+    <tbody>
+    {% for pid, nombre, precio, comprado in productos %}
+        <tr>
+            <td>{{ nombre }}</td>
+            <td>${{ '%.2f' % precio }}</td>
+            <td>
+                <form class="inline" action="{{ url_for('toggle', pid=pid) }}" method="post">
+                    <input type="checkbox" onclick="this.form.submit()" {% if comprado %}checked{% endif %}>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<p>Total: ${{ '%.2f' % total }}</p>
+<p><a href="{{ url_for('share') }}" target="_blank">Compartir lista</a></p>
+</body>
+</html>
